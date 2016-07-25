@@ -1,5 +1,19 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
+"Whazzup"<br>
+<!-- <button type="submit" formaction='/login' formmethod='get'>Login</button> -->
+<form action="/login"method="get">
+  <input type="submit" value="Login">
+</form>
+<form action="/register"method="get">
+  <input type="submit" value="Register">
+</form>
+<form action="/logout"method="get">
+  <input type="submit" value="Logout">
+</form>
+
+
+</div>
+  <!-- <h1>Welcome to Sinatra!</h1>
   <p>Hello, world!</p>
 
   <table>
@@ -19,5 +33,4 @@
       <td>The current controller</td>
       <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
     </tr>
-  </table>
-</div>
+  </table> -->
