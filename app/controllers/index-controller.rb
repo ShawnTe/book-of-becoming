@@ -2,26 +2,9 @@ get '/' do
   erb :index
 end
 
-get '/login' do
-  "Login route"
-  # temporary until login set up
-  redirect 'posts/new'
+# all other login / logout in sessions_controller
 
-end
-
-post '/login' do
-  # success
-  redirect 'posts/new'
-  # failed
-end
-
-get '/register' do
-  "Register route"
-end
-
-post '/login' do
-  # success
-  redirect 'welcome'
-  # failed
+get '/welcome' do
+  erb :'users/welcome'
 end
 

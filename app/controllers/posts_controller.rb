@@ -1,18 +1,21 @@
+get '/posts' do
+  # show a list of posts
+  @posts = Post.where("tag_id = 3")
+  erb :'/posts/show'
+end
 
 post '/posts' do
   # Post.create(params)
-  redirect "posts/new"
-end
-  #create a new post
-end
-
-post '/posts' do
   #post new post to database
+  p params
+  p "**************"
+  redirect "/posts/new"
 end
 
 get '/posts/new' do
-  "New post here"
-  erb :"posts/new"
+  p "New post here"
+
+  erb :"/posts/new"
 end
 
 get '/posts/:id/edit' do
@@ -35,4 +38,3 @@ end
 ##   display a single post
 # end
 
->>>>>>> development
