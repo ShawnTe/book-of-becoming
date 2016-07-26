@@ -9,6 +9,13 @@ posts.each {|post| post.destroy}
 tags = User.all
 tags.each {|tag| tag.destroy}
 
+# Create tags
+tags = ["Q", "Web Dev", "Foodie", "Peeps connect"]
+tags.each do |tag|
+  Tag.create({name: tag, user_id: rand(1..40)})
+end
+
+# Create users
 40.times do
   User.create(
     first_name: Faker::Name.first_name,
@@ -19,13 +26,13 @@ tags.each {|tag| tag.destroy}
   )
 end
 
-tags = ['Q', 'Summit', 'NP', 'Coding', 'Foodie']
+# Create posts
 1000.times do
   Post.create(
-    title: Faker::Name.first_name,
-    note: Faker::Name.last_name,
+    title: Faker::Company.bs,
+    note: Faker::Lorem.paragraph,
     user_id: rand(1..40),
-    tag_id: rand(1..5)
+    tag_id: rand(0..3)
   )
 end
 

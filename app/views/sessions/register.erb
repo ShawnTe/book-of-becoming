@@ -1,0 +1,24 @@
+
+
+<form id="register-form" action='/register' method="POST">
+  <label>First name</label>
+    <input type="text" name="first"><br>
+  <label>Last name</label>
+    <input type="text" name="last"><br>
+  <label>Email</label>
+    <input type="email" name="email"><br>
+  <label>Password</label>
+    <input type="password" name="password1"><br>
+  <label>Enter Password Again</label>
+    <input type="password" name="password2">
+    <input type="submit">
+</form>
+
+<!-- try: -->
+<% if @error %>
+  <div class="error">
+    <% @error.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>

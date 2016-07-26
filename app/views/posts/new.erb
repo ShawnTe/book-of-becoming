@@ -1,13 +1,17 @@
+<a href="/posts/new">Add new post</a>
+<a href="/posts">List 'em'</a>
 <div class="container">
   <h1>Welcome back!</h1>
 
   <h2>What's one thing to appreciate?</h2>
+<form action="/posts" method='post'>
+  <input type="text" name="post[title]" placeholder="One thing to remember"><br>
+  <textarea rows="4" cols="50" name="post[note]" placeholder="Notes"></textarea><br>
+  <input type="submit" value='Add'>
+</form>
+</div>
 
-  <form action="/posts/new" method="POST">
-    <label>Short and descriptive</label>
-      <input type="text" name="title" placeholder="Short and descriptive">
-      <input type="text" name="title" placeholder="Optional description">
-      <input type="submit" value="Log it!">
-  </form>
-  
+(Options to do quick add and hide the notes section.)
+
+
 </div>
