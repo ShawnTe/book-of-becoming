@@ -1,0 +1,11 @@
+body {
+  font-family: Futura;
+}
+
+a {
+  text-decoration: none;
+}
+
+.error {
+  color: maroon;
+}
