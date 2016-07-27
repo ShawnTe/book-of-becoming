@@ -1,0 +1,8 @@
+<ul id="full-post-list">
+  <% if posts %>
+    <% posts.each do |post|  %>
+      <li><%= post.title %>  Tag: <% post.tag_id%></li>
+    <% end  %>
+  <% end  %>
+</ul>
+

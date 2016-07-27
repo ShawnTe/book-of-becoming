@@ -1,17 +1,30 @@
-<a href="/posts/new">Add new post</a>
-<a href="/posts">List 'em'</a>
-<div class="container">
   <h1>Welcome back!</h1>
 
   <h2>What's one thing to appreciate?</h2>
-<form action="/posts" method='post'>
-  <input type="text" name="post[title]" placeholder="One thing to remember"><br>
-  <textarea rows="4" cols="50" name="post[note]" placeholder="Notes"></textarea><br>
-  <input type="submit" value='Add'>
+
+<form id="new-post" action="/posts" method='post'>
+  <input id="new-post-title" type="text" name="post[title]" placeholder="One thing to celebrate"><br>
+  <!-- <input type="text" name="post[tag_id]" placeholder="Tag"> -->
+
+  <select>
+    <option selected disabled>Choose theme</option>
+    <% @tags.each do |tag| %>
+      <option name="post[tag_id]" value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+
+
+  <input id="create-post" type="submit" value='Add'>
+  <div>
+    <textarea id="notes-tgl-field" rows="4" cols="50" name="post[note]" placeholder="Notes (optional)"></textarea><br>
+  </div>
+  <input id="notes-tgl-btn" type="submit" value="Hide notes">
 </form>
 </div>
 
-(Options to do quick add and hide the notes section.)
 
-
+<div class="right">
+  <a href="/posts">List 'em' all</a>
+  <!-- "most recent on top" -->
+  <%= erb :"_show", :layout => false, :locals => {:posts => @posts} %>
 </div>
