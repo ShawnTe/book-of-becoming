@@ -15,6 +15,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'bcrypt', '~> 3.1.7'
+gem 'pry'
 
 group :test do
   gem 'shoulda-matchers'

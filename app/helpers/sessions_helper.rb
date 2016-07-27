@@ -12,6 +12,7 @@ helpers do
   end
 
   def authenticate(email, password)
+    binding.pry
     @user = User.find_by(email: email)
     if @user && @user.password == password
       @user

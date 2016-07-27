@@ -1,8 +1,4 @@
-Show lots of 'em
-<a href="/posts/:id">Show by Tag</a>
+<h1>Show lots of 'em</h1>
 Show the tag name
-<ul>
-<% @posts.each do |post|  %>
-  <li><%= post.title %></li>
-<% end  %>
-</ul>
+<%= erb :"_show" %>
+
