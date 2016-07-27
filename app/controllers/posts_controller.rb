@@ -1,22 +1,22 @@
-get '/posts' do
-  # show a list of posts
-  @posts = Post.where("tag_id = 3")
-  erb :'/posts/show'
-end
-
-post '/posts' do
-  # Post.create(params)
-  #post new post to database
-  p params
-  p "**************"
-  redirect "/posts/new"
-end
-
 get '/posts/new' do
-  p "New post here"
+  @posts = Post.where(user_id: current_user.id)
+  @tags = Tag.where(user_id: current_user.id)
+  p "%" * 100
+  p @tags
+  p @tags.length
 
+  @tags.each do |tag|
+    p tag.name
+  end
+  p current_user.id
   erb :"/posts/new"
+
 end
+
+get '/posts/:id' do
+  #show all posts of a tag
+end
+
 
 get '/posts/:id/edit' do
   #non-ajax way to change a post
@@ -38,3 +38,38 @@ end
 ##   display a single post
 # end
 
+get '/posts' do
+  @posts = Post.where(user_id: current_user.id)
+
+  erb :'/posts/show'
+end
+
+post '/posts' do
+  @post = Post.new(params[:post])
+  @post.user_id = current_user.id
+  if @post.save
+
+  posts = Post.where(user_id: current_user.id)
+  # @posts = posts.order(title: :desc)
+
+# p @post.created_at
+    if request.xhr?
+p "*" * 100
+p "I'm in ajax!!!"
+      content_type :json
+      data = {post: @post}.to_json
+      # erb :'_show'
+    else
+      p "*" * 100
+p "I'm in the else!!!"
+      redirect '/posts/new'
+
+    end
+
+  else
+      "Oops! That didn't save for some reason."
+  end
+  # p select("user", "tag_id", @tags.collect {|r| [ r.name, r.id ] }, { :include_blank => true })
+
+  redirect "/posts/new"
+end
