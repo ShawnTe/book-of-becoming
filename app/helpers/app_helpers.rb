@@ -6,6 +6,9 @@ def my_posts
   @posts = Post.where(user_id: current_user.id).order(created_at: :desc)
 end
 
+
+
+
 Unsplash.configure do |config|
   config.application_id     = ENV['APP_ID']
   config.application_secret = ENV['SECRET_KEY']

@@ -1,15 +1,29 @@
-<h1> Let's add your tags</h1>
+  <div id="left">
+    <h1>Let's add your themes</h1>
+    <h3>Suggestions:</h3>
+    <ul>
+      <li>a role that represents an aspect of who you are becoming. <br>for ex. web developer, writer, traveler, partner</li>
+      <li>start with no more than three - five</li>
+    </ul>
+      <!-- <div style="background-color: red; height: 10px;">Hello</div> -->
+      <br>
+      <br>
+    <form action="/tags" method="post">
+    <label>Enter themes:</label><br>
+      <input type="text" name="name" placeholder="One at a time">
+      <input type="submit" value="Add">
+    </form>
+    <br><br>
+    <p>When you're done, <a href="/posts/new">jot down some sparks!</a></p>
+  </div>
+  <div id="right">
+    <h3>Your themes:</h3>
+      <% if @tags %>
+        <ul>
+        <% @tags.each do |tag| %>
+        <li><%= tag.name %></li>
+        <% end %>
+        </ul>
+      <% end %>
+  </div>
 
-
-<h2>Suggestion for your themes:</h2>
-<ul>
-  <li>a role that represents an aspect of who you are becoming</li>
-  <li>start with about three</li>
-</ul>
-<br>
-<br>
-<h2>Enter yours:</h2>
-<form action="/tags" method="post">
-  <input type="text" name="name" placeholder="One at a time"><br>
-  <input type="submit" value="Add">
-</form>

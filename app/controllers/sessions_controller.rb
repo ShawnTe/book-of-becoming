@@ -5,6 +5,7 @@ end
 # all other login / logout in sessions_controller
 
 get '/welcome' do
+  my_tags
   erb :'users/welcome'
 end
 

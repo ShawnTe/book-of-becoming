@@ -1,4 +1,5 @@
 <ul id="full-post-list">
+<!-- ALL  -->
   <% if @posts %>
     <% @posts.each do |post|  %>
       <li><a href="/posts/<%= post.id %>/edit"><%= post.title %></a> and Tag id: <%= post.tag_id %></li>
@@ -6,5 +7,6 @@
     <% end  %>
   <% end  %>
 </ul>
+
 
 

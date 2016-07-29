@@ -1,25 +1,17 @@
-  <h1>Welcome back!</h1>
-
-  <h2>What's one thing to appreciate?</h2>
+<h1>Remember your sparks here.</h1>
 
 <form id="new-post" action="/posts" method='post'>
-  <input id="new-post-title" type="text" name="post[title]" placeholder="One thing to celebrate"><br>
-  <!-- <input type="text" name="post[tag_id]" placeholder="Tag"> -->
+  <label>Spark in brief</label><br>
+  <input id="new-post-title" type="text" size="51" name="post[title]" >&nbsp; &nbsp;  <%= erb :'/tags/_tag-entry' %><br><br>
 
-  <%= erb :'/tags/_tag-entry' %>
+ 
 
-
-  <input id="create-post" type="submit" value='Add'>
+  <input id="create-post" type="submit" value='Add'><br><br>
   <div>
-    <textarea id="notes-tgl-field" rows="4" cols="50" name="post[note]" placeholder="Notes (optional)"></textarea><br>
+    <label>Notes</label><br>
+    <textarea id="notes-tgl-field" rows="4" cols="50" name="post[note]" placeholder="Optional"></textarea><br>
   </div>
   <input id="notes-tgl-btn" type="submit" value="Hide notes">
 </form>
-</div>
 
-<br>
-<div class="right">
-  <a href="/posts">List 'em' all</a>
-  <!-- "most recent on top" -->
-  <%= erb :"/posts/_show", :layout => false, :locals => {:posts => @posts} %>
-</div>
+

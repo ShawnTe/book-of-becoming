@@ -1,10 +1,26 @@
 body {
   font-family: Futura;
+  color: #111111;
+  max-width: 80%;
+}
+
+.body-div {
+  margin-left: 8%;
 }
 
 a {
   text-decoration: none;
+  color: #FF851B;
 }
+
+a.btn {
+ border:1px solid #FF851B;;  
+}
+
+
+ a.hover {
+  color: #F012BE;
+ }
 
 .error {
   color: maroon;
@@ -15,3 +31,73 @@ a {
   height: 100%;
   width: auto;
 }
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -300px;
+  width: 600px;
+  height: 400px;
+  background-color: rgba(255,255,0,.2);
+  border-radius: 50px;
+/*
+  text-align: center;
+vertical-align:middle;*/
+}
+
+.center-home {
+  display: table-cell
+  vertical-align:middle;
+  text-align: center;
+  width: 400px;
+height: 200px;
+/*margin-left:auto;
+margin-right:auto;*/
+margin-left:auto;
+margin-right:auto;
+margin-top:100px;
+}
+
+.navbar {
+  background-color: #85144b;
+}
+
+#title {
+  color: #39CCCC;
+}
+
+.navbar-inverse .navbar-nav>.active>a {
+  background-color: #39CCCC;
+}
+
+
+/*.navbar-inverse .navbar-nav>.active>a, 
+.navbar-inverse .navbar-nav>.active>a:focus, 
+.navbar-inverse .navbar-nav>.active>a:hover*/
+
+#left {
+  /*width: 400px;*/
+  float: left;
+   max-width: 40%;
+}
+
+#right {
+  /*margin-left: 100px;*/ /* Change this to whatever the width of your left column is*/
+  float:right;
+  max-width: 20%;
+  margin-right: 20%
+}
+
+.clear {
+  clear: both;
+}
+
+.btn-outline-info {
+  outline: 2px;
+  background: none;
+  border-color: #39CCCC;
+}
+
+

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
 
@@ -14,20 +15,42 @@
 
 <!-- <a href ="/login">Login </a> || <a href ="/logout"> Logout </a> || <a href ="/register"> Register</a> -->
 
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="/" id="title">Book of Becoming</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    <% if current_user == nil %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/login"><span class="glyphicon glyphicon-heart"></span> Login</a></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav">
+        <li><a href="/welcome">Themes</a></li>
+        <li><a href="/posts/new">New Spark</a></li>
+        <li><a href="/posts/show">View Sparks</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+      
+      <% end %>
 
-
-
-<div id="nav-bar">
-  <% if current_user == nil %>
-    <a id="register-button" href="/register"> Register </a> || <a id="login-button" href="/login"> Login </a>
-  <% else %>
-    <a href="/logout"> Logout </a>
-  <% end %>
-  || <a href="/welcome"> My themes </a> || <a href="/posts/new"> Add new Acknowledgment </a> || <a href="/posts/show">Show My Acknowledgments</a>
-</div>
+    </div>
+  </div>
+</nav>
+<div class="body-div">
 <br>
 
 
   <%= yield %>
+</div>
 </body>
 </html>

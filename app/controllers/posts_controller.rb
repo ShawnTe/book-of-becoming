@@ -12,12 +12,14 @@ get '/posts/show/:id' do
   p "*" * 25
    p "^" * 25
    my_tags
-   my_posts
+   @posts = my_posts.where(tag_id: params[:id])
+
   erb :'/posts/show'
 end
 
 get '/posts/show' do
   #show all posts of a tag
+  my_posts
    my_tags
   erb :'/posts/show'
 end
