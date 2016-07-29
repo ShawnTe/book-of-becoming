@@ -10,3 +10,9 @@ post '/tags' do
   redirect '/welcome'
   # Tag.create({params["name"]})
 end
+
+
+get '/testing' do
+  @photo_link = get_photo
+  erb :photo
+end

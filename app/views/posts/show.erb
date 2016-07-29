@@ -1,4 +1,9 @@
 <h1>Show lots of 'em</h1>
-Show the tag name
-<%= erb :"_show" %>
+Themes:
 
+<% @tags.each do |tag| %>
+  <button type="submit" formaction="/posts/show/<%= tag.id %>" formmethod="get" value="<%= tag.id %>"><%= tag.name %></button>
+<% end %>
+
+
+<%= erb :"/posts/_show", :layout => false, :locals => {:posts => @posts} %>

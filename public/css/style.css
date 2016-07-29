@@ -9,3 +9,9 @@ a {
 .error {
   color: maroon;
 }
+
+.bg-photo {
+  background-image: url("<%= @photo_link %>");
+  height: 100%;
+  width: auto;
+}

@@ -1,0 +1,6 @@
+<select name="post[tag_id]">
+    <option selected disabled>Choose theme</option>
+    <% @tags.each do |tag| %>
+      <option  value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+</select>

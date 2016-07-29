@@ -6,12 +6,7 @@
   <input id="new-post-title" type="text" name="post[title]" placeholder="One thing to celebrate"><br>
   <!-- <input type="text" name="post[tag_id]" placeholder="Tag"> -->
 
-  <select>
-    <option selected disabled>Choose theme</option>
-    <% @tags.each do |tag| %>
-      <option name="post[tag_id]" value="<%= tag.id %>"><%= tag.name %></option>
-    <% end %>
-  </select>
+  <%= erb :'/tags/_tag-entry' %>
 
 
   <input id="create-post" type="submit" value='Add'>
@@ -22,9 +17,9 @@
 </form>
 </div>
 
-
+<br>
 <div class="right">
   <a href="/posts">List 'em' all</a>
   <!-- "most recent on top" -->
-  <%= erb :"_show", :layout => false, :locals => {:posts => @posts} %>
+  <%= erb :"/posts/_show", :layout => false, :locals => {:posts => @posts} %>
 </div>
