@@ -1,34 +1,58 @@
 get '/posts/new' do
-  @posts = Post.where(user_id: current_user.id)
-  @tags = Tag.where(user_id: current_user.id)
-  p "%" * 100
-  p @tags
-  p @tags.length
-
-  @tags.each do |tag|
-    p tag.name
-  end
-  p current_user.id
+  my_posts
+  my_tags
   erb :"/posts/new"
 
 end
 
-get '/posts/:id' do
+
+get '/posts/show/:id' do
   #show all posts of a tag
+  p params[:id]
+  p "*" * 25
+   p "^" * 25
+   my_tags
+   my_posts
+  erb :'/posts/show'
 end
 
+get '/posts/show' do
+  #show all posts of a tag
+   my_tags
+  erb :'/posts/show'
+end
 
 get '/posts/:id/edit' do
   #non-ajax way to change a post
-  erb :edit
+  @post = Post.find(params[:id])
+  p @post
+  my_tags
+  p params
+  p "#-%" * 50
+  erb :'/posts/edit'
+end
+
+get '/posts/:id/edit' do
+  #ajax way to edit post
+  #to edit post make a partial that shows up on page
+  # @post = Post.find()
+  erb '/posts/_edit'
+
 end
 
 put '/posts/:id' do
   #update the edits to database
+  @post = Post.find(params[:id])
+  @post.update(params[:post])
+  p @post
+  p "put  put  " * 50
+  redirect '/posts/new'
 end
 
 delete '/posts/:id' do
   #delete a post from database
+  Post.find(params[:id]).destroy
+  redirect '/posts/new'
 end
 
 
@@ -50,20 +74,12 @@ post '/posts' do
   if @post.save
 
   posts = Post.where(user_id: current_user.id)
-  # @posts = posts.order(title: :desc)
-
-# p @post.created_at
     if request.xhr?
-p "*" * 100
-p "I'm in ajax!!!"
       content_type :json
       data = {post: @post}.to_json
       # erb :'_show'
     else
-      p "*" * 100
-p "I'm in the else!!!"
       redirect '/posts/new'
-
     end
 
   else

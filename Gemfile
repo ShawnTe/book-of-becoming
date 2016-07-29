@@ -16,6 +16,9 @@ gem 'shotgun'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
+gem 'unsplash'
+gem 'dotenv'
+gem 'awesome_print'
 
 group :test do
   gem 'shoulda-matchers'
