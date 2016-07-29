@@ -1,4 +1,5 @@
 get '/' do
+  @photo = get_photo
   erb :index
 end
 

@@ -18,12 +18,13 @@ end
 
 def get_photo
   photo = Unsplash::Photo.search(category='nature').sample
-p photo
+# p photo
 
   # @photo_user = photo.user.username
   # @photo_name = photo.user.name
   # @photo_link = photo.user.links["html"]
   photo.urls["full"]
+  # "https://hd.unsplash.com/44/HsQM7Jd2Qlysfyk9SgvX_logarska-valley-5.jpg"
 
 end
 
