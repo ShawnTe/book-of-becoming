@@ -1,0 +1,26 @@
+<h1>Show lots of 'em</h1>
+Themes:
+
+<a class="btn" href="/posts/show">All</a>
+<% @tags.each do |tag| %>
+  <a class="btn" href="/posts/show/<%= tag.id %>"><%= tag.name %></a>
+<% end %>
+
+
+
+<br>
+<br>
+
+
+<ul id="full-post-list">
+<!-- ALL  -->
+  <% if @posts %>
+    <% @posts.each do |post|  %>
+      <li><a href="/posts/<%= post.id %>/edit"><%= post.title %></a> </li>
+
+    <% end  %>
+  <% end  %>
+</ul>
+
+
+

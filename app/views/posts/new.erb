@@ -1,0 +1,17 @@
+<h1>Remember your sparks here.</h1>
+
+<form id="new-post" action="/posts" method='post'>
+  <label>Spark in brief</label><br>
+  <input id="new-post-title" type="text" size="51" name="post[title]" >&nbsp; &nbsp;  <%= erb :'/tags/_tag-entry' %><br><br>
+
+ 
+
+  <input id="create-post" type="submit" value='Add'><br><br>
+  <div>
+    <label>Notes</label><br>
+    <textarea id="notes-tgl-field" rows="4" cols="50" name="post[note]" placeholder="Optional"></textarea><br>
+  </div>
+  <input id="notes-tgl-btn" type="submit" value="Hide notes">
+</form>
+
+

@@ -1,0 +1,21 @@
+<h1>Edit Spark</h1>
+
+<form class="form-horizontal" action="/posts/<%= @post.id %>" method="post">
+  <input name="_method" value="put" type="hidden" >
+  <label>Spark in brief</label><br>
+  <input type="text" size="51" name="post[title]" placeholder="Acknowledgment" value="<%= @post.title %>">
+  <br><br>
+
+  <%= erb :'/tags/_tag-entry' %>
+  <br><br>
+
+
+  <textarea rows="4" cols="50" name="post[note]"><%= @post.note %></textarea><br>
+  <input class="btn-outline-info" type="submit">
+</form>
+<br><br><br>
+<form action="/posts/<%= @post.id %>" method="post">
+  <input name="_method" value="delete" type="hidden" >
+  <input class="btn-outline-info" type="submit" value="Delete this spark">
+</form>
+
