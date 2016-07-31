@@ -2,16 +2,16 @@
 
 <form id="new-post" action="/posts" method='post'>
   <label>Spark in brief</label><br>
-  <input id="new-post-title" type="text" size="51" name="post[title]" >&nbsp; &nbsp;  <%= erb :'/tags/_tag-entry' %><br><br>
+  <input id="new-post-title" type="text" size="51" name="post[title]" ><br><br>
 
- 
+  <%= erb :'/tags/_tag-entry' %>
 
   <input id="create-post" type="submit" value='Add'><br><br>
   <div>
-    <label>Notes</label><br>
-    <textarea id="notes-tgl-field" rows="4" cols="50" name="post[note]" placeholder="Optional"></textarea><br>
+    <label>Notes</label>
+    <textarea id="notes-tgl-field" class="post-notes-entry" rows="4" cols="50" name="post[note]" placeholder="Optional"></textarea><br>
   </div>
-  <input id="notes-tgl-btn" type="submit" value="Hide notes">
+  <input id="notes-tgl-btn" type="submit" value="Show notes">
 </form>
 
 

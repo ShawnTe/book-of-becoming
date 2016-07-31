@@ -4,24 +4,34 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // menuDropdown();
   createNote();
   toggleField();
 });
 
+// function menuDropdown() {
+//   $('.navbar-toggle').dropdown();
+// };
+
+    
+
 function createNote() {
-  $("#create-post").on('submit', function(event) {
-    console.log($(this));
-    console.log(event);
+  $("#new-post").on('submit', function(event) {
     event.preventDefault();
-    var formData = $('create-post').serialize()
+    var formData = $("#new-post").serialize()
     $.ajax ({
       url: "/posts",
       method: "post",
       data: formData
+
     }).done(function() {
-      console.log(serverResponse);
-      $("#full-post-list").append("<li>server data</li>")
+      $('#new-post')[0].reset();
     })
+  // Originally added new posts to new page    
+    // }).done(function(serverResponse) {
+    //   console.log(serverResponse);
+    //   $("#full-post-list").append("<li>server data</li>")
+    // })
   })
 }
 
@@ -29,12 +39,15 @@ function toggleField(){
   $("#notes-tgl-btn").on('click', function(event) {
     event.preventDefault();
 
-    $("#notes-tgl-field").toggle();
+    $("#notes-tgl-field").toggle("post-notes-entry");
+
+    // $("#notes-tgl-field").toggle();
     $(this).val(function(i, text){
-      return text === "Show notes" ? "Hide notes" : "Show notes";
+      return text === "Hide notes" ? "Show notes" : "Hide notes";
     })
   })
 }
+
 
 
 
