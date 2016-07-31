@@ -18,26 +18,11 @@ get '/login' do
   # failed
 end
 
-# post '/login' do
-# #   p params
-#   @user = authenticate(params[:email], params[:password])
-# # p @user
-#   if @user.authenticate
-#     login(@user)
-#     redirect '/posts'
-#   else
-#     @error = "Either your password or email don't match."
-#     p @error
-#     erb :'sessions/login'
-#   end
-# # p current_user
-# end
-
 post '/login' do
   @user = User.find_by_email(params[:email])
   if @user && @user.authenticate(params[:password])
     login(@user)
-    redirect '/posts'
+    redirect '/posts/new'
   else
     @error = "Either your password or email don't match."
     erb :'sessions/login'

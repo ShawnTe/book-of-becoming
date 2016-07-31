@@ -9,8 +9,6 @@ end
 get '/posts/show/:id' do
   #show all posts of a tag
   p params[:id]
-  p "*" * 25
-   p "^" * 25
    my_tags
    @posts = my_posts.where(tag_id: params[:id])
 
@@ -20,6 +18,10 @@ end
 get '/posts/show' do
   #show all posts of a tag
   my_posts
+  
+  p "*" * 25
+  p @posts
+   p "^" * 25
    my_tags
   erb :'/posts/show'
 end
@@ -54,7 +56,7 @@ end
 delete '/posts/:id' do
   #delete a post from database
   Post.find(params[:id]).destroy
-  redirect '/posts/new'
+  redirect '/posts/show'
 end
 
 
@@ -64,11 +66,10 @@ end
 ##   display a single post
 # end
 
-get '/posts' do
-  @posts = Post.where(user_id: current_user.id)
-
-  erb :'/posts/show'
-end
+# get '/posts' do
+#   @posts = Post.where(user_id: current_user.id)
+#   erb :'/posts/show'
+# end
 
 post '/posts' do
   @post = Post.new(params[:post])
