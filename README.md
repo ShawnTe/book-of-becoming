@@ -14,6 +14,7 @@ Conceptually, it's in the crossroads of my past mindful productivity experience 
 * Postgres DB
 * Bcrypt & has_secure_password
 * Bootstrap for top nav bar
+* Unsplash (image) API
 
 ## MVP
 * User can create a user account
