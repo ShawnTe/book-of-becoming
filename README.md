@@ -8,6 +8,9 @@ This was my passion project in Phase 2 of DevBootcamp. It's a CRUD app with MVC 
 
 Conceptually, it's in the crossroads of my past mindful productivity experience and new coding skills. Woohoo! 
 
+## Image
+![images](/index.gif "index image")
+
 ## Tech stack
 * Ruby
 * Sinatra
