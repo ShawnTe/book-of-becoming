@@ -1,7 +1,7 @@
 # book-of-becoming
 A simple log to keep you on track with who you are Becoming, because life happens. 
 
-[Online](https://book-of-becoming.herokuapp.com/)
+[Book of Becoming online](https://book-of-becoming.herokuapp.com/)
 
 ## Summary
 This was my passion project in Phase 2 of DevBootcamp. It's a CRUD app with MVC architecture and RESTful routes and is deployed on Heroku. I'm proud of the simple clean interface. 
